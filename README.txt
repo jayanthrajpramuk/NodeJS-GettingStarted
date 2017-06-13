@@ -8,3 +8,6 @@ nodemon app.js : automate the changes and run
 
 - custom script
 : nom run nodemon : :) // new file
+
+- get , post , put , delete are wrappers of node on top of regular
+HTTP methods
