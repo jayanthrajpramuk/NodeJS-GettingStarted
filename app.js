@@ -17,6 +17,6 @@ console.log(process.env.OS) // if set , will get the value : Windows_NT
 
 app.get('/', function (req, res) {
   //res.send("Hello World");
-  res.send("<html><p><h1>Hello Node JS !!!!</h1></h1></p></p></html>");
+  res.send("<html><p><h1>Hello Node JS !!!!</h1></p></html>");
 });
 
