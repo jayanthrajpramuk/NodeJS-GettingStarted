@@ -49,8 +49,8 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
 
-          {{#each list}}
-              <li><a>{{this}}</a></li>
+          {{#each nav}}
+              <li><a href="{{this.Link}}">{{this.Text}}</a></li>
           {{/each}}
 
 

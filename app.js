@@ -3,6 +3,8 @@ var app = express();
 
 var port = process.env.PORT || 5000;
 
+var bookRouter = express.Router();
+
 console.log("Before listening to port");
 
 // start and listen to the port mentioned
@@ -24,12 +26,33 @@ var handlebars = require('express-handlebars');
 app.engine('.hbs',handlebars({extname:'.hbs'}));
 app.set('view engine','.hbs');
 
+app.use('/Books', bookRouter);
+
+bookRouter.route('/')
+.get(function (res, res) {
+  res.send("Hello Books");
+});
+
+bookRouter.route('/single')
+.get(function (res, res) {
+  res.send("Hello Single Book");
+});
+
 app.get('/', function (req, res) {
   res.send("<html><p><h1>Hello Node JS !!!!</h1></p></html>");
 });
 
 app.get('/index', function (req, res) {
-    res.render('index');
+    res.render('index', {
+      title : "Hello from Render",
+      nav :[{
+        Link : "/Author",
+        Text : "Authors"
+      },{
+        Link : "/Books",
+        Text : "Books"
+      }]
+    });
 });
 
 app.get('/books', function (req, res) {
