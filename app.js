@@ -34,6 +34,7 @@ app.get('/index', function (req, res) {
 
 app.get('/books', function (req, res) {
   res.render('index', {
-    list :['jayanth', 'raj', 'pramuk']
+    list :['jayanth', 'raj', 'pramuk'],
+    title :"My Library"
   });
 });
