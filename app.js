@@ -16,7 +16,9 @@ console.log(process.env.PORT); // if set , will get the value
 console.log(process.env.OS); // if set , will get the value : Windows_NT
 
 app.use(express.static('public'));
-app.use(express.static('src/views'));
+//app.use(express.static('src/views'));
+app.set('views','./src/views');
+app.set('view engine','jade');
 
 app.get('/', function (req, res) {
   //res.send("Hello World");
@@ -24,5 +26,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/books', function (req, res) {
-  res.send("<html><p><h1>Hello Books !!!!</h1></p></html>");
+  res.render('index',{
+    list :['jayanth', 'raj', 'pramuk']
+  });
 });

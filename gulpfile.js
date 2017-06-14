@@ -6,6 +6,7 @@ var nodemon = require('gulp-nodemon');
 
 var jsfiles = ['*.js', 'src/**/*.js'];
 
+
 gulp.task('style',function() {
   console.log();
   return gulp.src(jsfiles)
@@ -32,7 +33,7 @@ gulp.task('inject',function () {
     ignorePath : '/public'
   };
 
-  return gulp.src('./src/views/*.html')
+  return gulp.src('./src/views/*.jade')  // *.html or *.jade
              .pipe(wiredep(options))
              .pipe(inject(injectScr, injectOptions))
              .pipe(gulp.dest('./src/views'));
