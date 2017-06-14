@@ -20,6 +20,7 @@
     "gulp-jshint": "^2.0.4",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
   }
 }

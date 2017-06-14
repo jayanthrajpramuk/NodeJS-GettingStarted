@@ -16,3 +16,5 @@ HTTP methods
 
 - gulp : task manager for our application.
 if we get cli error , which means we are missing some libgit
+
+-<!-- bower:js --><!--endbower-->
