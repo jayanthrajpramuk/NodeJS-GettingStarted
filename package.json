@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "nodemon" : "nodemon app.js"
+    "nodemon": "nodemon app.js"
   },
   "author": "Jayanth C S ",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "nodemon": "^1.11.0"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
     "jasmine-node": "^1.14.5"
   }
 }

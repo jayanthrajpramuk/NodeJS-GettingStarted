@@ -11,3 +11,7 @@ nodemon app.js : automate the changes and run
 
 - get , post , put , delete are wrappers of node on top of regular
 HTTP methods
+
+- node for back end of Javascript. Bower for front end of Javascript
+
+- gulp : task manager for our application.
