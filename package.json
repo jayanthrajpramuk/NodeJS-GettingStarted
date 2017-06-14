@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "nodemon": "nodemon app.js"
+    "nodemon": "nodemon app.js gulp style"
   },
   "author": "Jayanth C S ",
   "license": "ISC",
@@ -16,6 +16,10 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "jasmine-node": "^1.14.5"
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "jasmine-node": "^1.14.5",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
   }
 }

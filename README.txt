@@ -15,3 +15,4 @@ HTTP methods
 - node for back end of Javascript. Bower for front end of Javascript
 
 - gulp : task manager for our application.
+if we get cli error , which means we are missing some libgit

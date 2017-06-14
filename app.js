@@ -12,8 +12,8 @@ app.listen(port , function () {
 
 console.log("After listeninf to port");
 
-console.log(process.env.PORT) // if set , will get the value
-console.log(process.env.OS) // if set , will get the value : Windows_NT
+console.log(process.env.PORT); // if set , will get the value
+console.log(process.env.OS); // if set , will get the value : Windows_NT
 
 app.use(express.static('public'));
 app.use(express.static('src/views'));

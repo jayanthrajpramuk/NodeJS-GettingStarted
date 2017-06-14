@@ -7,7 +7,7 @@ console.log(a+b); // console.log in browser and nodeJS
 // function Statement
 function greet() {
   console.log("Hello NODEJS");
-};
+}
 greet();
 
 // function Expression
@@ -20,10 +20,10 @@ greetKannada();
 //first call functions
 
 function greetBoth (cb, cb2) {
-  console.log("--- Greeting both !! ----")
+  console.log("--- Greeting both !! ----");
   cb2();
   cb();
-};
+}
 
 greetBoth(greet , greetKannada);
 
