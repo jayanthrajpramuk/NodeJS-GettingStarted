@@ -24,3 +24,5 @@ if we get cli error , which means we are missing some libgit
 
  - overrides is used because wiredep will not be able to identif and inject
  so we override in bower.json
+
+ - jshint , jscs, automatic reload using gulp-nodemon, automatic js/css file insertion in index.js
