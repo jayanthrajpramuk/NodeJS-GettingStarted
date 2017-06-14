@@ -48,18 +48,12 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
+
+          {{#each list}}
+              <li><a>{{this}}</a></li>
+          {{/each}}
+
+
       </ul>
       <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">

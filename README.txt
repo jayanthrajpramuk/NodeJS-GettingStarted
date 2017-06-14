@@ -26,3 +26,7 @@ if we get cli error , which means we are missing some libgit
  so we override in bower.json
 
  - jshint , jscs, automatic reload using gulp-nodemon, automatic js/css file insertion in index.js
+
+- tried and tested 2 templating engines
+hbs and jade
+render and send are 2 tricks
