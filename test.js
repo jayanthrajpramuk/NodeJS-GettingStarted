@@ -30,7 +30,7 @@ greetBoth(greet , greetKannada);
 // using function expression on the fly.
 
 greetBoth(function () {
-  console.log("Hola NODEJS");
-} , function () {
-  console.log("Moshi Moshi NODEJS");
+  console.log('Hola NODEJS');
+} ,function () {
+  console.log('Moshi Moshi NODEJS');
 });
