@@ -17,4 +17,10 @@ HTTP methods
 - gulp : task manager for our application.
 if we get cli error , which means we are missing some libgit
 
--<!-- bower:js --><!--endbower-->
+- <!-- bower:js --><!--endbower-->
+- <!-- bower:css --><!--endbower-->
+
+- wiredep is to inject the libraries in to our index.html.
+
+ - overrides is used because wiredep will not be able to identif and inject
+ so we override in bower.json
