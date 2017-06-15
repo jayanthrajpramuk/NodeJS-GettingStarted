@@ -4,7 +4,7 @@ var bookRouter = require('./src/routes/bookRoutes');
 
 var port = process.env.PORT || 5000;
 
-app.use('/Books', bookRouter);
+app.use('/books', bookRouter);
 
 console.log("Before listening to port");
 
