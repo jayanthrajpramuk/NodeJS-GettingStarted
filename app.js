@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
+var bookRouter = require('./src/routes/bookRoutes');
 
 var port = process.env.PORT || 5000;
 
-var bookRouter = express.Router();
+app.use('/Books', bookRouter);
 
 console.log("Before listening to port");
 
@@ -26,49 +27,6 @@ var handlebars = require('express-handlebars');
 app.engine('.hbs',handlebars({extname:'.hbs'}));
 app.set('view engine','.hbs');
 
-app.use('/Books', bookRouter);
-
-var books = [{
-  title :"War and Peace",
-  genere :"History / Fiction",
-  author : "Tolopsky",
-  read :"false"
-},{
-  title :"Harry Potter",
-  genere :"Fantasy",
-  author : "J K Rowling",
-  read :"true"
-},{
-  title :"The Hobbit",
-  genere :"Fantasy Drama",
-  author : "James T Kirk",
-  read :"false"
-},{
-  title :"Game of thrones",
-  genere :"Drama",
-  author : "Crowne",
-  read :"false"
-}];
-
-bookRouter.route('/')
-.get(function (res, res) {
-  res.render('books', {
-    title : "Hello from Render",
-    books : books,
-    nav :[{
-      Link : "/Author",
-      Text : "Authors"
-    },{
-      Link : "/Books",
-      Text : "Books"
-    }]
-  });
-});
-
-bookRouter.route('/single')
-.get(function (res, res) {
-  res.send("Hello Single Book");
-});
 
 app.get('/', function (req, res) {
   res.send("<html><p><h1>Hello Node JS !!!!</h1></p></html>");
@@ -78,7 +36,7 @@ app.get('/index', function (req, res) {
     res.render('index', {
       title : "Hello from Render",
       nav :[{
-        Link : "/Author",
+        Link : "/Authors",
         Text : "Authors"
       },{
         Link : "/Books",
@@ -87,9 +45,4 @@ app.get('/index', function (req, res) {
     });
 });
 
-app.get('/books', function (req, res) {
-  res.render('index', {
-    list :['jayanth', 'raj', 'pramuk'],
-    title :"My Library"
-  });
-});
+
