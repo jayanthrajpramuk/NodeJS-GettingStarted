@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
-var bookRouter = require('./src/routes/bookRoutes');
+var nav = require('./src/nav/navigation');
+var bookRouter = require('./src/routes/bookRoutes')(nav);
+
 
 var port = process.env.PORT || 5000;
 
@@ -35,13 +37,7 @@ app.get('/', function (req, res) {
 app.get('/index', function (req, res) {
     res.render('index', {
       title : "Hello from Render",
-      nav :[{
-        Link : "/Authors",
-        Text : "Authors"
-      },{
-        Link : "/Books",
-        Text : "Books"
-      }]
+      nav : nav
     });
 });
 
