@@ -31,7 +31,7 @@ var books = [{
 
 var routes = function(nav) {
 
-  bookRouter.route('/:id').get(function (req, res) {
+/*  bookRouter.route('/:id').get(function (req, res) {
     var id = req.params.id;
     log.info("Id is ",id);
     log.info("Books are  is ",books);
@@ -40,7 +40,7 @@ var routes = function(nav) {
       book : books[id],
       nav : nav
     });
-  });
+  });*/
 
   /*bookRouter.route('/').get(function (req, res) {
    res.render('books', {
@@ -50,6 +50,35 @@ var routes = function(nav) {
    });
    });*/
 
+  bookRouter.route('/:oid').get(function (req, res) {
+
+
+    const connectionString = 'postgresql://postgres:postgres@localhost:5432/pms';
+    pg.connect(connectionString, function(err, client, done) {
+      var oid = req.params.oid;
+
+      log.info("Passed Id is ",  req.params.oid);
+      if(err) {
+        console.log(err);
+        return res.status(500).json({success: false, data: err});
+      }
+
+      client.query('SELECT * FROM Books  WHERE id=($1)', [oid], function (err, recordSet) {
+
+
+        log.info("Book details are are :",recordSet.rows);
+        done();
+
+        res.render('book', {
+          title : "My Library",
+          book : recordSet.rows[0],
+          nav : nav
+        });
+
+      });
+    });
+
+  });
 
   bookRouter.route('/').get(function (req, res) {
 
