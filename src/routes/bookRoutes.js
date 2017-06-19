@@ -40,13 +40,6 @@ var routes = function(nav) {
     });
   });
 
-  bookRouter.get('/books', function (req, res) {
-    res.render('index', {
-      list :['jayanth', 'raj', 'pramuk'],
-      title :"My Library"
-    });
-  });
-
   bookRouter.route('/').get(function (req, res) {
     res.render('books', {
       title : "My Library",

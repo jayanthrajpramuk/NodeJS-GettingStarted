@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var nav = require('./src/nav/navigation');
+var pg = require('pg');
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 
@@ -42,3 +43,32 @@ app.get('/index', function (req, res) {
 });
 
 
+
+
+app.get('/author', function (req, res) {
+  res.render('index', {
+    title : "Hello from Render",
+    nav : nav
+  });
+});
+
+const { Pool, Client } = require('pg')
+const connectionString = 'postgresql://postgres:postgres@localhost:5432/pms'
+
+const pool = new Pool({
+  connectionString: connectionString,
+})
+
+pool.query('SELECT NOW()', (err, res) => {
+  console.log(err, res)
+  pool.end()
+})
+
+const client = new Client({
+  connectionString: connectionString,
+})
+client.connect()
+
+/*const query = client.query(
+   'CREATE TABLE Books(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
+query.on('end', () => { client.end(); });*/
