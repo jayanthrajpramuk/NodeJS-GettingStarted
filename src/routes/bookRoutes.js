@@ -4,6 +4,8 @@ var bookRouter = express.Router();
 var Log = require('Log');
 log = new Log('info');
 
+const pg = require('pg');
+
 //var nav = require('../nav/navigation');
 
 var books = [{
@@ -40,17 +42,41 @@ var routes = function(nav) {
     });
   });
 
+  /*bookRouter.route('/').get(function (req, res) {
+   res.render('books', {
+   title : "My Library",
+   books : books,
+   nav : nav
+   });
+   });*/
+
+
   bookRouter.route('/').get(function (req, res) {
-    res.render('books', {
-      title : "My Library",
-      books : books,
-      nav : nav
+
+    const connectionString = 'postgresql://postgres:postgres@localhost:5432/pms';
+    pg.connect(connectionString, function(err, client, done) {
+      if(err) {
+        console.log(err);
+        return res.status(500).json({success: false, data: err});
+      }
+
+      client.query('SELECT * FROM Books ORDER BY id ASC', function (err, recordSet) {
+
+
+        log.info(recordSet);
+        done();
+
+        res.render('books', {
+          title : "My Library",
+          books : recordSet.rows,
+          nav : nav
+        });
+
+      });
     });
   });
 
   return bookRouter;
 };
-
-
 
 module.exports = routes;
