@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var nav = require('./src/nav/navigation');
 var pg = require('pg');
+
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 
@@ -43,49 +44,9 @@ app.get('/index', function (req, res) {
 });
 
 
-app.get('/author', function (req, res) {
-  res.render('index', {
-    title : "Hello from Render",
-    nav : nav
-  });
-});
 
-const { Pool, Client } = require('pg');
-const connectionString = 'postgresql://postgres:postgres@localhost:5432/pms';
-
-const pool = new Pool({
-  connectionString: connectionString,
-});
-
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end();
-});
-
-const client = new Client({
-  connectionString: connectionString,
-});
-
-client.connect();
-
-/*const query = client.query(
-   'CREATE TABLE Books(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, author VARCHAR(40) not null, genere VARCHAR(40) not null, complete BOOLEAN)');
-query.on('end', () => { client.end(); });*/
-
-/*client.query('INSERT INTO Books(text, author, genere, complete) values($1, $2, $3, $4)',
-   ["War and Peace", "James Jalbonsky", "War","false"]);
-
-client.query('INSERT INTO Books(text, author, genere, complete) values($1, $2, $3, $4)',
-   ["Harry Potter", "J.K Rowling", "Fantasy/Fiction","false"]);
-
-client.query('INSERT INTO Books(text, author, genere, complete) values($1, $2, $3, $4)',
-   ["Game of thrones", "Crowne", "War-Fantasy","false"]);
-
-client.query('INSERT INTO Books(text, author, genere, complete) values($1, $2, $3, $4)',
-   ["The Hobbit", "Piere Abu", "fantasy-Drama", "false"]);*/
-
-
+/*
 client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
   console.log(err ? err.stack : res.rows[0].message)
   client.end()
-});
+});*/

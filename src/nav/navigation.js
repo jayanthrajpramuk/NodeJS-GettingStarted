@@ -1,7 +1,7 @@
 //var express = require('express');
 
 var navigation = [{
-  Link : "/author",
+  Link : "/authors",
   Text : "Authors"
 },{
   Link : "/books",
