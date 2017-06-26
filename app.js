@@ -9,7 +9,7 @@ var dailyStatusRouter = require('./src/routes/dailyStatusRoutes')();
 
 var port = process.env.PORT || 5000;
 
-app.use('/dailyStatus', dailyStatusRouter);
+app.use('/ds', dailyStatusRouter);
 app.use('/books', bookRouter);
 
 
