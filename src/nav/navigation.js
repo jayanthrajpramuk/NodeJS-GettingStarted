@@ -13,6 +13,10 @@ var navigation = [{
   {
     Link : "/contact",
     Text : "Contact Us"
+  },
+  {
+    Link : "/dailyStatus",
+    Text : "Daily Status"
   }];
 
 module.exports = navigation;

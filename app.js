@@ -4,11 +4,15 @@ var nav = require('./src/nav/navigation');
 var pg = require('pg');
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var dailyStatusRouter = require('./src/routes/dailyStatusRoutes')();
 
 
 var port = process.env.PORT || 5000;
 
+app.use('/dailyStatus', dailyStatusRouter);
 app.use('/books', bookRouter);
+
+
 
 console.log("Before listening to port");
 
