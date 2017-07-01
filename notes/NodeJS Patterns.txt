@@ -32,3 +32,9 @@ Concepts:
     invoked.
 2.
 3.
+
+Commit to GitHub Repo :
+----------------------
+git remote add origin https://github.com/jayanthrajpramuk/NodeJS-GettingStarted.git
+git push -u origin master
+
