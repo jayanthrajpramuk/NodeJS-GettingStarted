@@ -1,0 +1,34 @@
+Do 1 thing and do it well . Node philosophy.
+
+Grunt Installations :
+--------------------
+1. grunt-cli -g : for grunt tasks on command line. globally so that its available on cmd.
+2. its completely user choise to do on project level. Then we have to go to node_modules and
+    then bin and open command prompt and execute tasks.
+3. grunt-contrib-jshint: lint tool.
+4. grunt-contrib-watch : this is mainly for restart and trigger restart.
+5. Prefered way is always to start with package.json file and use --save / --save-dev
+6. basic tasks like 'jshint': [project files] , 'watch':[files],task ['jshint']
+    in GruntFile.js
+
+Mocha : Testing Stratergy
+-------------------------
+1. Install Mocha Globally. (Can use easily from command prompt)
+2. By default it search test(folder) or tests(.js) file and then keep checking for
+    describe and keep executing tests.
+3. Regarding tests folder , preferred way would be to have indivisual folder
+       and keep addings tests to it. Easy to manage and will be faster.
+
+Git and Git Hub :
+-----------------
+1. Create git ignore file, and add idea, node_modules,some other.
+
+
+Concepts:
+---------
+1. When we import using require from node , its almost like compiling and
+    executing entire file. Like basic variable decl, console statements
+    will be executed.But methods will be exposed, they will not be run unless
+    invoked.
+2.
+3.
