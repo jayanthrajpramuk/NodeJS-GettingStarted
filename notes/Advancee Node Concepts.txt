@@ -1,0 +1,40 @@
+REQUIRE:
+--------------
+exports.id = 5 // Ok
+exports = {id:5} // this is not Ok
+module.exports = {id : 54} //this is ok.
+There is a way to export variables and objects in NodeJS. then variables are magically scoped to their
+currosponding files only. but HOW ??
+
+> require('module').wrapper[0]
+'(function (exports, require, module, __filename, __dirname) { }
+this is what we get using Require Module
+meaning everything file is wrapped inside the function , thats the reason all the variables which are declared inside function will only
+be specific to that file. Sice we know that in javascript we only have function Scope
+
+export is nothing but = module.export
+
+thats the reason line 1 and 2 work the way it works. If we assign a new object
+its reference would be lost..But we can always add new keys to existing values.
+
+We can use require.main == module , to check if at all require is being used or not.
+
+CACHING :
+----------------
+Require uses the feature of Caching. Meaning , it will not be loaded twice.
+And we actually see the entry in paths. We can even delete the cache file.
+delete require.cache['key'] // which will be full path name
+
+let's say we want to see some log , whenever we load using requireJS.
+then,
+
+In the file , just module.exports = function() {
+console.log('Being loaded') and then execure when require ==> require('file_to_be_Loaded')();
+}
+
+KNOW Your NPM :
+---------------
+npm is not part of node, but it comes along with node as its very popular
+yarn is alternative
+optionalDependecy:
+
