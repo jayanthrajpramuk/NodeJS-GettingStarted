@@ -57,6 +57,11 @@ SetTimeout , SetImmedidate:
 setImmediate() is designed to execute a script once the current poll phase completes.
 setTimeout() schedules a script to be run after a minimum threshold in ms has elapsed.
 
+
+Depending upon number of sec, it will wait in the timer stack and then it will be added to
+event loop. m1(1000ms) m2(200ms), m3(500ms) , then the order will be like
+m2,m3,m1
+
 The order in which these timers will be called/executed will be purely dependent on
 the context they are called.If both are called from main module , then its purely
 dependent on the performance of the process.BUT , if they are called in
@@ -71,12 +76,22 @@ Then first to get called is I2 then I1 then T1 and then T2
 Main :
 Nothing is gaurenteed.
 
-This Immediate will be called only after the EVENT LOOP IS EXECUTED COMPLETLY.
+This Immediate will be called only after the CURRENT EXECUTION LOOP IS EXECUTED COMPLETLY.
 Even though there are many callbacks which were delcared first , this Immediate will
 get the priority and completed all Immediates , and then flow is considered from
 Call Stack.
 
 process.nextTick:
 -----------------
+This doesnt care if at all current execution loop is complete or not.
+It comes out of execution context , run the next in the call stack and comes back to event loop
+
+Once it exists then all the callbacks  which are specified will be executed.
+
+But in the screenshot when we , change filename to number , then it fails and we will
+not be able to countinue the call sequence.
+
+So we can use process.nextTick.
+POINT is , can we use TIMEOUT , IMMIDIATE ?? Check with custom code.
 
 

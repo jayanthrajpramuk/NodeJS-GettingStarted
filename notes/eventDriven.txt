@@ -1,0 +1,30 @@
+- Basic callbacks, Promise, async
+- All callbacks are not asyncronous
+
+Basic Callback Scenerio:
+------------------------
+
+We define a method  which takes i/p and then callback.
+lets name this method as getUserDetails.
+
+getUserDetails(i/p , callback) => getUserDetails(9 , callBackFunction);
+Logically we have to split the action in to 2 parts.
+Part 1 - What Operation should we do. (how to get user details -> connect db , fetch)
+Part 2 - What happens if operation is  success or if its failure. (pass this to UI)
+
+2 examples beafutifully show us different approach of using async o/ps.
+
+Brief Intro Promises :
+----------------------
+Here we do not specify the callbacks as a arg. But in turn we return a promise.
+
+EVEN though the defining function doesnt know wnything about the callbacks , how will
+it calls success and failure callbacks ?
+
+It works on OBJECT BY REFRENCE PRINICIPLE.
+
+before doing the actual operation , all the callbacks whould have been attached
+to the promise object, as we know the nature of JS , that once the control goes out ,
+it will have to complete that function so as to come back to event loop.
+
+
