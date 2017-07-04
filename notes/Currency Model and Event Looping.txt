@@ -1,0 +1,56 @@
+Currency model for handling multiple conncetions.Also knows as non-blocking nature
+of Node.js. This is based on Event Model , which is based on Event-Loop
+
+What exactly is I/O
+-------------------
+Internal communication b/w resources via input and O/p
+
+Accessing disc and n/w operations, which is the  most expensive operation and had lot
+of wait time. To hadle this we have features like
+1. Synch: which is horrible
+2. Fork : New process for each request
+3. Thread : effecient but very hard when using shared Resources
+4. Event Loop :Single threaded.
+
+EVENT LOOP :
+-------------
+- The entity that handles events and converts in to callback invoctions.
+the loop which takes events from event Q and then pushes their callback to callstack
+- This gets automatically started when it executes a JS file and exists once there are
+no more callbacks are there to execute.
+
+V8 Call Stack :
+----------------
+- It has basic stack implementation.
+- By default there will always be anonamous function. --> execution point -->iife
+- Whenever we call a function it goes in to the stack.Then unless it executes it will still
+be available on the stack , once done the it will pop out.
+- lets say M3 ->M2 -> M1 ->M0 : ==> even console.log is also a function.(which goe sin to the stack)
+
+Handling Slow Operations:
+-------------------------
+Since its a single thread operation , some times it will be slow.
+We can still write blocking code in node. a loop which rins from 0 till 999999999999
+then we have 3 loops and print some value. This is a Blocking Code.
+
+So node's event loop helps us to avoid this style of Programming.
+
+How callbacks actually Work :
+-----------------------------
+It maintains 3 main DataStructures.
+1. Call Stack.
+2. Timer
+3. Event Stack. (Loop)
+
+when ever call stack encounters a async operation , it automatically puts in Event Stack.
+If it encounters a setTimeout , then it puts it in Timer .
+
+The call stack will countinue executing the function , utill it completes the function.
+
+Next, when the callstack is empty then it starts executing callbacks. when the timer completes
+the it will be put in Event Stack.
+
+The set timer is like , it will wait minimum of 3000 mS
+
+SetTimeout , SetImmedidate, process.nextTick :
+----------------------------------------------
