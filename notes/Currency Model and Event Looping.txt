@@ -52,5 +52,31 @@ the it will be put in Event Stack.
 
 The set timer is like , it will wait minimum of 3000 mS
 
-SetTimeout , SetImmedidate, process.nextTick :
-----------------------------------------------
+SetTimeout , SetImmedidate:
+---------------------------
+setImmediate() is designed to execute a script once the current poll phase completes.
+setTimeout() schedules a script to be run after a minimum threshold in ms has elapsed.
+
+The order in which these timers will be called/executed will be purely dependent on
+the context they are called.If both are called from main module , then its purely
+dependent on the performance of the process.BUT , if they are called in
+Async process, then it is gaurenteed that setImmediate will be called first ,
+then set timeout will be called.
+
+Let's say there are 2 timeouts T1, T2 and 2 Immediates I1, I2 invoked accoring the number
+
+T1  then T2 then I2 then I1 . and all are called inside Async function / Main Method
+Async :
+Then first to get called is I2 then I1 then T1 and then T2
+Main :
+Nothing is gaurenteed.
+
+This Immediate will be called only after the EVENT LOOP IS EXECUTED COMPLETLY.
+Even though there are many callbacks which were delcared first , this Immediate will
+get the priority and completed all Immediates , and then flow is considered from
+Call Stack.
+
+process.nextTick:
+-----------------
+
+
