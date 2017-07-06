@@ -38,3 +38,67 @@ Commit to GitHub Repo :
 git remote add origin https://github.com/jayanthrajpramuk/NodeJS-GettingStarted.git
 git push -u origin master
 
+HTTPS:
+------
+const server = require('http').createServer();
+Now this server is a eventEmitter as well, and hence it has a callback
+ option server.on('request', callbackFUnction(res,req));
+
+connection : keep-alive : client can send multiple requests. It wont be killed after it gets response.
+Transfer-Encoding: chunked : Results can be sent in chunks.
+Node is Ok to send the response in Chunks.
+
+Since the response is a stream , after processing the results and sending the stream back ,
+its important to close the stream because the client will still be streaming,Esle
+it keeps waiting util 2 minutes and throws timeout
+
+During idling state (waiting to complete 1000ms say) it can still process other requests. thanks to event loop
+can set default time out to any custom value.
+
+we can also use https as well but with a options params
+this options need to have certificate and a key. Generate dynamically and then use files ,cert.pm and
+key.pm and specify these using FS module. then in browsers we use https://localhost:8080
+
+need to change the port to 443 : Default communication port for SSL
+
+
+Requesting HTTP/HTTPS:
+----------------------
+Both request and response are streams . Request is read stream and response is write stream.
+they are also eventEmmitters . Bith request and response have events which we can listen to and apply
+callbacks.
+
+request has evenets like error,data etc.
+
+Because they are streams , its very important to close the streams.
+
+its likd of like http.request({},function(req){}) // this doesnt have error callback as its emmitter.
+the options object takes hostname , method etc.
+
+Routes:
+--------
+If we have multiple URL route , then we can use the concept of using dynamicTemplating where template
+are loaded depending on the URL route. Can also use switch as a condition
+
+http.STATUS_CODES : list of all status codes.
+
+
+we can send the response by writing them in writeHead(code, {}) // this options object has many keys
+COntent-Type , Location
+
+Query String / Request Parameteres:
+-----------------------------------
+Node has separate URL module which many functions.
+
+url = "http://gloria-qa.got.volvo.net/gloria/#deliverycontrol/myOrderOverview/external"
+then
+URL.parse(url) --> gives us URL object. it has name , hash , port , protocol etc.
+
+
+URL.parse(url, true) : this will get json form of querystring.
+URL.parse(url, true).query : JSon object of query Parameteres
+
+INVERSE case as well if we have object we can parse it back to string URL using stringify()
+
+
+
