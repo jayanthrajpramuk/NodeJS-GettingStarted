@@ -1,0 +1,21 @@
+working with Operating-System:
+----------------
+var os = require('os');
+Node has os module which actually interacts with operating system.
+os.userInfo() , os.hostname(), os.type(), os.release() to name few.
+
+working with File-System:
+-------------------------
+var fs = require('fs');
+
+fs module has 2 ways to read file . readfile, readfilesync methods. they have both form.
+sync: try-catch , actual raw data
+async : err param as call back, returns buffer
+
+
+
+
+Console Module:
+---------------
+
+

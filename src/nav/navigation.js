@@ -17,6 +17,10 @@ var navigation = [{
   {
     Link : "/dailyStatus",
     Text : "Daily Status"
+  },
+  {
+    Link : "/registerPaient",
+    Text : "Register Paient"
   }];
 
 module.exports = navigation;

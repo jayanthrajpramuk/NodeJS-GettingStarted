@@ -6,11 +6,15 @@ var pg = require('pg');
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 var dailyStatusRouter = require('./src/routes/dailyStatusRoutes')();
 
+var registrationRouter = require('./src/routes/registrationRoutes')(nav);
+
 
 var port = process.env.PORT || 5000;
 
 app.use('/ds', dailyStatusRouter);
 app.use('/books', bookRouter);
+
+app.use('/registerPaient', registrationRouter);
 
 
 
