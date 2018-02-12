@@ -1,250 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Storystrap Template</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Storystrap Template</title>
+    <meta name="generator" content="Bootply"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <!--bower:css-->
-        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
-        <!--endbower-->
+    <!--bower:css-->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"/>
+    <!--endbower-->
 
-        <!-- bower:js -->
-        <script src="/lib/jquery/dist/jquery.js"></script>
-        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <!-- endbower-->
-
-
-        <!--inject:css-->
-
-        <link rel="stylesheet" href="/css/styles.css">
-
-        <!--endinject-->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower-->
 
 
-        <!--inject:js-->
-        <script src="/js/myJS.js"></script>
-        <!--endinject-->
+    <!--inject:css-->
 
-        <!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+    <link rel="stylesheet" href="/css/styles.css">
 
-	</head>
-	<body>
+    <!--endinject-->
+
+
+    <!--inject:js-->
+    <script src="/js/myJS.js"></script>
+    <!--endinject-->
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
 <header class="navbar yamm navbar-default navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> Bill Management System</a>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> Bill
+                Management System</a>
 
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-
-          {{#each nav}}
-              <li><a href="{{this.Link}}">{{this.Text}}</a></li>
-          {{/each}}
-      </ul>
-
-      <!--<ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>-->
-    </nav>
-  </div>
-</header>
-
-<!--<div id="masthead">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <h1>{{title}}
-          <p class="lead"></p>
-        </h1>
-      </div>
-      <div class="col-md-5">
-        <div class="well well-lg"> 
-          <div class="row">
-            <div class="col-sm-12">
-              
-			
-            </div>
-          </div>
         </div>
-      </div>
-    </div> 
-  </div>&lt;!&ndash; /cont &ndash;&gt;
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="top-spacer"> </div>
-      </div>
-    </div> 
-  </div>&lt;!&ndash; /cont &ndash;&gt;
-  
-</div>-->
+        <nav class="collapse navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
 
+                {{#each nav}}
+                    <li><a href="{{this.Link}}">{{this.Text}}</a></li>
+                {{/each}}
+            </ul>
+
+        </nav>
+    </div>
+</header>
 
 
 <div class="container">
-     <h1>
-      <small>Register Paient</small>
-   </h1>
+    <h1>
+        <small>Register Paient</small>
+    </h1>
 
-  <div class="row">
-    
-    <div class="col-md-12"> 
-      
-      <div class="panel">
-        <div class="panel-body">
+    <div class="row">
 
-            <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleSelect1">Example select</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleSelect2">Example multiple select</label>
-    <select multiple="" class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </div>
-  <fieldset class="form-group">
-    <legend>Radio buttons</legend>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-        Option one is this and that—be sure to include why it's great
-      </label>
-    </div>
-    <div class="form-check">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-        Option two can be something else and selecting it will deselect option one
-      </label>
-    </div>
-    <div class="form-check disabled">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
-        Option three is disabled
-      </label>
-    </div>
-  </fieldset>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="checkbox" class="form-check-input">
-      Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <div class="col-md-12">
 
+            <div class="panel">
+                <div class="panel-body">
 
-            Register Paient content goes here
-<!--
-            {{#each books}}
-                <div class="row">
-                    <br>
-                    <div class="col-md-2 col-sm-3 text-center">
-                        <a class="story-title" href="#"><i class="fa fa-book fa-5x" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="col-md-10 col-sm-9">
-                        <h3>{{this.text}}</h3>
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <h4><span class="label label-default">{{this.author}}</span></h4><h4>
-                                <small style="font-family:courier,'new courier';" class="text-muted">{{this.genere}}  • Read More <a href="/books/{{this.id}}" class="text-muted">Book Id : {{@index}}</a>
-                                <a href="/registerPaient/{{this.id}}" class="text-muted">Register Id : {{@index}}</a></small>
-                            </h4></div>
-                            <div class="col-xs-3"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" size="50">
                         </div>
-                        <br><br>
-                    </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="name">DOB</label>
+                                    <input type="text" class="form-control" id="email" placeholder="DD/MM/YYYY">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="name">Sex</label>
+                                    <select class="form-control">
+                                        <option value="Select">Select</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Phone No</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Email Id</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email Id">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea class="form-control" rows="5" id="address" name="address"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-right">Register</button>
+                        </div>
+
+                    </form>
                 </div>
-                <hr>
-            {{/each}}-->
-
-          
-
-          
-          <!--<a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>-->
-        
-          
+            </div>
         </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
-   	</div><!--/col-12-->
-  </div>
-</div>
-                                                
-                                                                                
-<hr>
-
-<!--<div class="container" id="footer">
-  <div class="row">
-    <div class="col col-sm-12">
-      
-      <h1>Follow Us</h1>
-      <div class="btn-group">
-       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
-      </div>
-      
     </div>
-  </div>
-</div>-->
+</div>
+
 
 <hr>
 
 <hr>
 
+<hr>
 
-	</body>
+
+</body>
 </html>

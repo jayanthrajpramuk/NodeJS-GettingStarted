@@ -157,6 +157,10 @@ a,a:hover {
   padding:6px;
   color:#fff;
 }
+
+.removepadding {
+    padding: 0px !important;
+}
     
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
