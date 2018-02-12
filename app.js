@@ -8,6 +8,8 @@ var dailyStatusRouter = require('./src/routes/dailyStatusRoutes')();
 var registrationRouter = require('./src/routes/registrationRoutes')(nav);
 var billRouter = require('./src/routes/billRoutes')(nav);
 var contactUsRouter = require('./src/routes/contactRoutes')(nav);
+var histroyRouter = require('./src/routes/histroyRoutes')(nav);
+var maintainRouter = require('./src/routes/maintainRoutes')(nav);
 
 
 var port = process.env.PORT || 5000;
@@ -17,6 +19,8 @@ app.use('/books', bookRouter);
 app.use('/registerPaient', registrationRouter);
 app.use('/bill', billRouter);
 app.use('/contactus', contactUsRouter);
+app.use('/histroy', histroyRouter);
+app.use('/maintain', maintainRouter);
 
 
 
@@ -42,21 +46,24 @@ app.engine('.hbs',handlebars({extname:'.hbs'}));
 app.set('view engine','.hbs');
 
 
-app.get('/', function (req, res) {
+
+/*app.get('/', function (req, res) {
   res.send("<html><p><h1>Hello Node JS !!!!</h1></p></html>");
+});*/
+
+
+app.get('/', function (req, res) {
+  res.render('home', {
+      title : "Bill Management System",
+      nav : nav
+    });
 });
 
+/*// for route index
 app.get('/index', function (req, res) {
     res.render('index', {
       title : "Hello from Render",
       nav : nav
     });
-});
-
-
-
-/*
-client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
-  console.log(err ? err.stack : res.rows[0].message)
-  client.end()
 });*/
+
