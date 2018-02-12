@@ -29,11 +29,23 @@
 
     <!--inject:js-->
     <script src="/js/myJS.js"></script>
+    <script src="/js/billModule.js"></script>
     <!--endinject-->
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+
+    <script>
+        var addMethodClicked = function () {
+            alert("Add clicked");
+        };
+
+        var saveClicked = function () {
+            alert("Save clicked");
+        };
+    </script>
 
 </head>
 <body>
@@ -85,17 +97,21 @@
 
                         <p class="text-danger"><b>Paient Details</b><p>
                       <div class="row">
-                          <div class="col-md-4"><p><b>Name: </b>Narendra Modi</p></div>
-                          <div class="col-md-4"><b>Sex: </b>Male</div>
-                          <div class="col-md-4"><b>Bill No: </b>1112D56</div>
+                          <div class="col-md-3"><p><b>Name:</b>Narendra Modi</p></div>
+                          <div class="col-md-2"><b>Sex:</b>Male</div>
+                          <div class="col-md-3"><b>Bill No:</b>1112D56</div>
+                          <div class="col-md-3"><b>Ph-No:</b>123456789</div>
                       </div>
                         </div>
 <br>
                    <p class="text-danger"><b>Bill Details</b><p>
                     <div class="buttonlayout" id="buttonLayout">
-                        <button type="button" class="btn btn-success" id="add" title="Add New">
-                            <i class="glyphicon glyphicon-plus"></i>
-                        </button>
+
+
+            <button type="button" class="btn btn-success" id="add" title="Add New" data-toggle="modal"
+                    data-target="#addBillModal">
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
 
                     </div>
 
@@ -148,6 +164,81 @@
 
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="addBillModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Entry</h4>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label for="name">Category</label>
+                          <select class="form-control">
+                              <option value="Select">Select</option>
+                              <option value="test">Test</option>
+                              <option value="medicine">Medicine</option>
+                          </select>
+                      </div>
+
+                      <div class="col-md-3">
+                          <label for="name">Inspection Type</label>
+                          <select class="form-control">
+                              <option value="Select">Select</option>
+                              <option value="growthScan">Growth Scan</option>
+                              <option value="fetalScan">Fetal Scan</option>
+                              <option value="anomoly">Anomaly Scan</option>
+                          </select>
+                      </div>
+
+                      <div class="col-md-3">
+                       <label for="name">Medicine Type</label>
+                          <select class="form-control">
+                              <option value="Select">Select</option>
+                              <option value="tt">Tetanus</option>
+                              <option value="ivf">IVF</option>
+                          </select>
+                      </div>
+                  </div>
+<br>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label for="description">Description</label>
+                          <textarea class="form-control" id="description"></textarea>
+
+                      </div>
+
+                    <div class="col-md-3">
+                          <label for="amount">Amount</label>
+                        <input type="text" class="form-control" id="amount" name="amount">
+
+                      </div>
+
+                      <!--  <div class="col-md-3">
+                       <label for="name">Medicine Type</label>
+                          <select class="form-control">
+                              <option value="Select">Select</option>
+                              <option value="tt">Tetanus</option>
+                              <option value="ivf">IVF</option>
+                          </select>
+                      </div>-->
+                  </div>
+              </div>
+          </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="saveClicked()">Add</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>

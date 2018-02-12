@@ -1,178 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Bill Management System</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel='shortcut icon' type='image/x-icon' href="/lib/favicon1.ico" />
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Bill Management System</title>
+    <meta name="generator" content="Bootply"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel='shortcut icon' type='image/x-icon' href="/lib/favicon1.ico"/>
 
-        <!--bower:css-->
-        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
-        <!--endbower-->
+    <!--bower:css-->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css"/>
+    <!--endbower-->
 
-        <!-- bower:js -->
-        <script src="/lib/jquery/dist/jquery.js"></script>
-        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <!-- endbower-->
-
-
-        <!--inject:css-->
-
-        <link rel="stylesheet" href="/css/styles.css">
-
-        <!--endinject-->
+    <!-- bower:js -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower-->
 
 
-        <!--inject:js-->
-        <script src="/js/myJS.js"></script>
-        <!--endinject-->
+    <!--inject:css-->
 
-        <!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+    <link rel="stylesheet" href="/css/styles.css">
 
-	</head>
-	<body>
+    <!--endinject-->
+
+
+    <!--inject:js-->
+    <script src="/js/myJS.js"></script>
+    <!--endinject-->
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
 <header class="navbar yamm navbar-default navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-       <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>Bill Management System</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-
-          {{#each nav}}
-              <li><a href="{{this.Link}}">{{this.Text}}</a></li>
-          {{/each}}
-      </ul>
-      <!--<ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>-->
-    </nav>
-  </div>
-</header>
-
-<!--<div id="masthead">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <h1>{{title}}
-          <p class="lead"></p>
-        </h1>
-      </div>
-      <div class="col-md-5">
-        <div class="well well-lg">
-          <div class="row">
-            <div class="col-sm-12">
-
-
-            </div>
-          </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>Bill
+                Management System</a>
         </div>
-      </div>
-    </div>
-  </div>&lt;!&ndash; /cont &ndash;&gt;
+        <nav class="collapse navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="top-spacer"> </div>
-      </div>
-    </div>
-  </div>&lt;!&ndash; /cont &ndash;&gt;
+                {{#each nav}}
+                    <li><a href="{{this.Link}}">{{this.Text}}</a></li>
+                {{/each}}
+            </ul>
 
-</div>-->
+        </nav>
+    </div>
+</header>
 
 
 <div class="container">
-     <h1>
-      <small>Maintain</small>
-   </h1>
-  <div class="row">
+    <h1>
+        <small>Maintain</small>
+    </h1>
+    <div class="row">
 
-    <div class="col-md-12">
+        <div class="col-md-12">
 
-      <div class="panel">
-        <div class="panel-body">
+            <div class="panel">
+                <div class="panel-body">
 
 
-          Admin Console Goes Here
-<!--
-            {{#each books}}
-                <div class="row">
-                    <br>
-                    <div class="col-md-2 col-sm-3 text-center">
-                        <a class="story-title" href="#"><i class="fa fa-book fa-5x" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="col-md-10 col-sm-9">
-                        <h3>{{this.text}}</h3>
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <h4><span class="label label-default">{{this.author}}</span></h4><h4>
-                                <small style="font-family:courier,'new courier';" class="text-muted">{{this.genere}}  • Read More <a href="/books/{{this.id}}" class="text-muted">Book Id : {{@index}}</a>
-                                <a href="/registerPaient/{{this.id}}" class="text-muted">Register Id : {{@index}}</a></small>
-                            </h4></div>
-                            <div class="col-xs-3"></div>
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="name">Category</label>
+                                    <select class="form-control">
+                                        <option value="Select">Select</option>
+                                        <option value="test">Test</option>
+                                        <option value="medicine">Medicine</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="inspection">Inspection Type</label>
+                                    <input type="text" class="form-control" id="inspection" name="inspection">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="medicine">Medicine Type</label>
+                                    <input type="text" class="form-control" id="medicine" name="medicine">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description"></textarea>
+
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="amount">Amount</label>
+                                    <input type="text" class="form-control" id="amount" name="amount">
+
+                                </div>
+
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <button type="submit" class="btn btn-primary pull-left">Add</button>
+                                </div>
+
+                                <div class="col-lg-1">
+                                    <button type="submit" class="btn btn-primary pull-left"> Clear</button>
+                                </div>
+                            </div>
+
                         </div>
-                        <br><br>
-                    </div>
+                        <hr>
+                        <div class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Search : Inspection / Medicine"
+                                   name="insceptionOrMedicinesearch">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="glyphicon glyphicon-search"> Search</i></button>
+                            </div>
+                        </div>
+                        <hr>
+                         <p class="text-danger"><b>Service List</b><p>
+                        <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Tax</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Examination</td>
+                            <td>Fetal Scan</td>
+                            <td>289</td>
+                            <td>3000</td>
+                            <td> <button type="button" class="btn btn-facebook" id="edit" title="Edit">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button></td>
+                            <td>  <button type="button" class="btn btn-danger" id="delete" title="Delete">
+                            <i class="glyphicon glyphicon-minus"></i>
+                        </button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Medicine</td>
+                            <td>Tetanus</td>
+                            <td>18</td>
+                            <td>750</td>
+                             <td> <button type="button" class="btn btn-facebook" id="edit" title="Edit">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button></td>
+                            <td>  <button type="button" class="btn btn-danger" id="delete" title="Delete">
+                            <i class="glyphicon glyphicon-minus"></i>
+                        </button></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    </form>
+
                 </div>
-                <hr>
-            {{/each}}-->
-
-
-
-
-         <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>-->
+            </div>
 
 
         </div>
-      </div>
-
-
-
-   	</div><!--/col-12-->
-  </div>
+    </div>
 </div>
 
 
 <hr>
 
-<!--<div class="container" id="footer">
-  <div class="row">
-    <div class="col col-sm-12">
-
-      <h1>Follow Us</h1>
-      <div class="btn-group">
-       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
-      </div>
-
-    </div>
-  </div>
-</div>-->
 
 <hr>
 
 <hr>
 
 
-	</body>
+</body>
 </html>
