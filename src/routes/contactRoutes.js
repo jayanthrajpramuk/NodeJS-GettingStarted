@@ -1,5 +1,5 @@
 var express = require('express');
-var registrationRouter = express.Router();
+var contactRouter = express.Router();
 const pool = require('../db/dbFactory');
 
 var Log = require('Log');
@@ -8,7 +8,7 @@ log = new Log('info');
 
 var routes = function(nav) {
 
-  registrationRouter.route('/').get(function (req, res) {
+  contactRouter.route('/').get(function (req, res) {
 
 
     pool.query('SELECT * FROM Books ORDER BY id ASC', function(err, val) {
@@ -18,7 +18,7 @@ var routes = function(nav) {
 
       console.log('Result Set is :', val.rows);
 
-      res.render('registerPaient', {
+      res.render('contactus', {
         title : "Register Paient",
         books : val.rows,
         nav : nav
@@ -27,7 +27,7 @@ var routes = function(nav) {
 
    });
 
-  registrationRouter.route('/:oid').get(function (req, res) {
+  contactRouter.route('/:oid').get(function (req, res) {/*
 
     var oid = req.params.oid;
 
@@ -45,10 +45,10 @@ var routes = function(nav) {
       });
     });
 
-  });
+  */});
 
 
-  registrationRouter.route('/save').post(function (req, res) {
+  contactRouter.route('/save').post(function (req, res) {/*
 
     //TODO : to get values from the client.
 
@@ -61,10 +61,10 @@ var routes = function(nav) {
 
     });
 
-  });
+  */});
 
 
-  return registrationRouter;
+  return contactRouter;
 };
 
 module.exports = routes;

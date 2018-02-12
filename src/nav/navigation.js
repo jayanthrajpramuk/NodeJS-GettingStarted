@@ -1,26 +1,17 @@
 //var express = require('express');
 
-var navigation = [{
-  Link : "/authors",
-  Text : "Authors"
-},{
-  Link : "/books",
-  Text : "Books"
-},{
-  Link : "/bestSellers",
-  Text : "Best Sellers"
-},
-  {
-    Link : "/contact",
-    Text : "Contact Us"
-  },
-  {
-    Link : "/dailyStatus",
-    Text : "Daily Status"
-  },
-  {
+var navigation = [
+   {
     Link : "/registerPaient",
     Text : "Register Paient"
+  },
+  {
+    Link : "/bill",
+    Text : "Genrate Bills"
+  },
+  {
+    Link : "/contactus",
+    Text : "Contact Us"
   }];
 
 module.exports = navigation;
