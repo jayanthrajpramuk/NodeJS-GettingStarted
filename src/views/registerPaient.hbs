@@ -44,9 +44,10 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#dob').datepicker({
-                                     autoclose: true
-                                 });
+            $('#dob').datepicker({ autoclose: true });
+             $('#sex').select2({
+                 minimumResultsForSearch: -1
+                               });
         });
     </script>
 
@@ -102,7 +103,7 @@
 
                                 <div class="col-md-3">
                                     <label for="name">Sex</label>
-                                    <select class="form-control">
+                                    <select class="form-control" id="sex">
                                         <option value="Select">Select</option>
                                         <option value="M">Male</option>
                                         <option value="F">Female</option>
