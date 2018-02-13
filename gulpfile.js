@@ -16,6 +16,7 @@ gulp.task('style',function() {
              );
 });
 
+// this is the task which injects the JS , CSS files
 gulp.task('inject',function () {
   var wiredep = require('wiredep').stream;
   var inject = require('gulp-inject');
@@ -33,7 +34,7 @@ gulp.task('inject',function () {
     ignorePath : '/public'
   };
 
-  return gulp.src('./src/views/*.html')  // *.html or *.jade
+  return gulp.src('./src/views/*.hbs')  // *.html or *.jade
              .pipe(wiredep(options))
              .pipe(inject(injectScr, injectOptions))
              .pipe(gulp.dest('./src/views'));

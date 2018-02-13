@@ -16,7 +16,11 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "select2": "~4.0",
+    "moment":"2.20.1",
+    "moment-timezone":"0.5.14",
+    "eonasdan-bootstrap-datetimepicker":"^4.17.0"
   },
   "overrides": {
     "bootstrap":{
@@ -30,6 +34,31 @@
         "less/font-awesome.less",
         "scss/font-awesome.scss",
         "css/font-awesome.min.css"
+      ]
+    },
+    "select2":{
+      "main" : [
+              "dist/css/select2.css",
+              "dist/js/select2.js"
+      ]
+   },
+    "moment":{
+      "main":[
+        "src/moment.js",
+        "locale/*.js",
+        "min/moment-with-locales.js"
+      ]
+    },
+     "moment-timezone":{
+      "main":[
+        "builds/moment-timezone.min.js"
+      ]
+    },
+    "eonasdan-bootstrap-datetimepicker":{
+      "main":[
+        "src/js/bootstrap-datetimepicker.js",
+        "src/less/_bootstrap-datetimepicker.less",
+        "src/scss/_bootstrap-datetimepicker.scss"
       ]
     }
   }
