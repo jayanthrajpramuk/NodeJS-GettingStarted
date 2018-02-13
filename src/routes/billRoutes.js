@@ -27,6 +27,24 @@ var routes = function(nav) {
 
    });
 
+  billRouter.route('/getJson').get(function (req, res) {
+    var data = [{
+      id:167587586986970700,
+      text:'One'
+    },
+    {
+      id:2,
+      text:'Two'
+    },
+    {
+      id:3,
+      text:'Three'
+    }]
+
+    return res.json(data);
+
+   });
+
   billRouter.route('/:oid').get(function (req, res) {/*
 
     var oid = req.params.oid;

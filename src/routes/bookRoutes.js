@@ -38,6 +38,7 @@ var routes = function(nav) {
 
       console.log('Result Set is :', resultSet.rows);
 
+
       res.render('book', {
         title : "My Library",
         book : resultSet.rows[0],
