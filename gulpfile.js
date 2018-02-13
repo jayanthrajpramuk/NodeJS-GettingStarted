@@ -34,6 +34,7 @@ gulp.task('inject',function () {
     ignorePath : '/public'
   };
 
+  //FIXME:
   return gulp.src('./src/views/*.hbs')  // *.html or *.jade
              .pipe(wiredep(options))
              .pipe(inject(injectScr, injectOptions))
